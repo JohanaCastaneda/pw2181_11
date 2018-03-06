@@ -3,82 +3,58 @@
 <head>
 	<meta charset="utf-8">
 	<title>Práctica 01 CSS3</title>
-</head>
-<body>
+	<link rel="stylesheet" href="css/estilos.css">
 	<header>
 		<img src="img/resplandor.png" alt="">
-		<img src="img/logo.png" alt="">
+		<img src="img/logo.png" id="logo" alt=""> 
+</head>
+<body>
 		<nav>
 			<ul>
-				<li>Inicio</li>
-				<li>Sección</li>
-				<li>Sección</li>
-				<li>Sección</li>
-				<li>Sección</li>
-				<li>Sección</li>
-			</ul>
-
-			<form action="#"> 
-
-				<input type="search" placeholder="Buscar aqui....">
-				<input type="button" value="buscar">
-
-			</form>
-		</nav>	
-		<section>
-			<article>
-				<img src="img/slide2.jpg" alt="">
-			</article>	
-		</section>
-		<section>
-			<article>
-				<img src="img/separador.jpg" alt="">
-				<br>
-				Un sección
-				<br>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				<p></p>
-				<input type="submit" value="ver mas">
-			</article>
-
-			<article>
-				<img src="img/separador.jpg" alt="">
-				<br>
-				Otra sección
-				<br>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				<br>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				<p></p>
-				<input type="submit" value="ver mas">
-			</article>
-
-			<article>
-				<img src="img/separador.jpg" alt="">
-				<br>
-				Un vídeo
-				<br>
-				<img src="img/video.jpg" alt="">
-
-			</article>
-		</section>
-			
+			<li>Inicio</li>
+			<li>Sección</li>
+			<li>Seccion</li>
+			<li>Seccion</li>
+			<li>Seccion</li>
+			<li>Sección</li>
+		</ul>
+		<form action="#">
+			<input type= "search" placeholder="Buscar aquí...">
+			<input type= "button" value="buscar">
+	   </form>
+      </nav>
 	</header>
-
+	<section id="seccion01">
+		<article>
+			<img src="img/slide2.jpg" alt="">
+		</article>
+	</section>
+	<section id="seccion02">
+		<article><img src="img/separador.jpg" alt="">
+			<br>
+			<span class="unaSeccion">Una sección</span>
+			<br>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod autem recusandae excepturi eius enim ipsum unde nam, delectus cupiditate tenetur distinctio perspiciatis omnis repellat, maiores cum facere quaerat quis ad.
+			<p></p>
+			<input type="submit" value="ver más">
+		</article>
+		<article>
+			<img src="img/separador.jpg" alt="">
+			<br>
+			<span class="otraSeccion">Otra Sección</span>
+			<br>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores voluptatum, quod aliquid quis voluptates deserunt quo earum nesciunt consequuntur, tempora accusamus dolor quisquam harum ea maiores laudantium similique unde itaque!
+			<br>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error accusamus numquam, rem in consequuntur. Reiciendis, excepturi, ut. Ipsum iste cumque minus molestiae id, eum dolor dolores, quas aperiam, dolorum dolorem.
+			<p></p>
+			<input type="submit" value="ver más">
+		</article>
+		<article>
+			<img src="img/separador.jpg" alt="">
+			<span class="otraSeccion"> Un vídeo</span>
+			<br>
+			<img src="img/video.jpg">
+		</article>
+	</section>
 </body>
 </html>
