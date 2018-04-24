@@ -1,0 +1,17 @@
+JSON
+JAVASCRIPT OBJECT NOTATION
+
+conjunto
+[
+	LLAVE:
+	{
+		LLAVE2:VALOR,
+		LLAVE1: VALOR
+	},
+	LLAVE:
+	{
+		LLAVE2:VALOR,
+		LLAVE1: VALOR
+	}
+]
+
