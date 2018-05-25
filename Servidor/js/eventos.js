@@ -1,4 +1,3 @@
-
 var inicioApp=function()
 {
 	var Aceptar = function()
@@ -34,25 +33,28 @@ var inicioApp=function()
 						});
 
 	}
-	var buscaUsuario = function(){
+	var buscaUsuario = function()
+	{
 		var usuario = $("#txtNombreUsuario").val();
 		var parametros= "opc=buscaUsuario"+
 						"&usuario="+usuario+
 						"&aleatorio="+Math.random();
+
 		if (usuario != ""){
 			$.ajax({
 							cache:false,
 							type: "POST",
 							dataType: "json",
-							url: "php/buscaUsuario.php",
-							data:parametros,
+							url: "php/buscausuarios.php",
+							data: parametros,
 							success: function(response){
-
 								if(response.respuesta == true){
-									$("#txtNombreUsuario").val(response.nombre);
-									$("#txtClaveUsuario").val(response.clave)
+									$("#txtNombre").val(response.nombre);
+									$("#txtClaveUsuario").val(response.clave);
 								}else{
 									$("#txtNombre").focus();
+									$("#txtNombre").val("");
+									$("#txtClaveUsuario").val("");
 								}
 								
 								
@@ -71,8 +73,38 @@ var inicioApp=function()
 
 		}
 	}
+
+	var Guardar = function(){
+		var usuario=$("#txtNombreUsuario").val();
+		var nombre=$("#txtNombre").val();
+		var clave=$("#txtClaveUsuario").val();
+
+		if(usuario!="" && nombre!="" && clave!=""){
+
+			$.ajax({
+							cache:false,
+							type: "POST",
+							dataType: "json",
+							url: "php/validaentrada.php",
+							data:parametros,
+							success: function(response){
+								
+								
+							},
+							error:function(xhr,ajaxOptions,thrownError){
+
+							}
+						});
+
+		}else{
+			alert("llene todos los datos")
+		}
+
+	}
+
 	$("#btnAceptar").on("click",Aceptar);
 	$("#txtNombreUsuario").on("keypress",teclaNombreUsuario);
+	$('#btnGuardar').on("click",Guardar)
 	$("#frmUsuarios").hide();
 }
 

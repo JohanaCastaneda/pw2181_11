@@ -15,7 +15,7 @@ function buscaUsuario()
 	if(mysqli_num_rows($resConsulta) > 0){
 		$respuesta = true;
 		while($regConsulta = mysqli_fetch_array($resConsulta)){
-			$nombre = $regConsulta["nombre"];
+			$nombre = utf8_encode($regConsulta["nombre"]);
 			$clave = $regConsulta["clave"];
 
 		}
@@ -32,7 +32,7 @@ $opc = $_POST["opc"];
 switch ($opc) 
 {
 	case 'buscaUsuario':
-	valida();
+	buscaUsuario();
 	break;
 	
 	default:
