@@ -78,6 +78,11 @@ var inicioApp=function()
 		var usuario=$("#txtNombreUsuario").val();
 		var nombre=$("#txtNombre").val();
 		var clave=$("#txtClaveUsuario").val();
+		var parametros = "opc=guardarusuario"+
+						 "&usuario="+usuario+
+						 "&nombre="+nombre+
+						 "&clave="+clave+
+						 "&aleatorio="+Math.random();
 
 		if(usuario!="" && nombre!="" && clave!=""){
 
@@ -85,9 +90,17 @@ var inicioApp=function()
 							cache:false,
 							type: "POST",
 							dataType: "json",
-							url: "php/validaentrada.php",
+							url: "php/guardarusuario.php",
 							data:parametros,
 							success: function(response){
+								if(response.respuesta == true){
+									alert("cambios guardados con exito");
+									$("#frmUsuarios > input").val("");
+									$("#txtNombreUsuario").focus();
+								}
+								else{
+									alert("ocurrio un error, intente mas tarde");
+								}
 								
 								
 							},
