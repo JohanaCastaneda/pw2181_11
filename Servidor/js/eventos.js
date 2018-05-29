@@ -114,10 +114,47 @@ var inicioApp=function()
 		}
 
 	}
+	var Borrar = function(){
+		var usuario = $("#txtNombreUsuario").val();
+		var pregunta = prompt("seguro de borrar a"+usuario+"? (si/no)","no");
+		var parametros = "opc=borrarusuario"+
+						 "&usuario="+usuario+
+						 "&aleatorio="+Math.random();
+
+		if (pregunta != null && pregunta == "si") 
+		{
+			$.ajax({
+							cache:false,
+							type: "POST",
+							dataType: "json",
+							url: "php/borrarusuario.php",
+							data:parametros,
+							success: function(response){
+								if(response.respuesta == true){
+									alert("Usuario borrado");
+									$("#frmUsuarios > input").val("");
+									$("#txtNombreUsuario").focus();
+									
+								}
+								else{
+									alert("ocurrio un error, intente mas tarde");
+								}
+								
+								
+							},
+							error:function(xhr,ajaxOptions,thrownError){
+
+							}
+						});
+		}
+	}
+
 
 	$("#btnAceptar").on("click",Aceptar);
 	$("#txtNombreUsuario").on("keypress",teclaNombreUsuario);
 	$('#btnGuardar').on("click",Guardar)
+	$('#btnBorrar').on("click",Borrar)
+
 	$("#frmUsuarios").hide();
 }
 
